@@ -330,9 +330,15 @@ function tallyUpDonations(runners) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 has a closure in the scope, whereas counter 2 does has global scope. 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * counter1 – you can tell because everything is in between the curly brackets. 
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * Counter1 would be perfect in trying to micromanage a function that starts at 0 and in which redefining the count is not ideal. Counter2 would be useful if we needed to redefine count. 
  *
 */
 
