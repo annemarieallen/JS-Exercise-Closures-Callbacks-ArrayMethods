@@ -157,8 +157,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 
-function lowerCaseStrings(arrItem) {
-  /* code here */
+function lowerCaseStrings(strings) {
+  const newString = [];
+  strings.forEach(newCase => {
+    newString.push(newCase.toLowerCase());
+  })
+  return newString;
 }
 
 
@@ -177,9 +181,18 @@ function lowerCaseStrings(arrItem) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+  const newStrings = [];
+  strings.map(function(newParam){
+    if("apple" === newParam){
+      newStrings.push(true);
+    } else {
+      newStrings.push(false);
+    }
+  })
+  return newStrings;
 }
+
 
 /**
  * ### Challenge `removeApple`
@@ -197,12 +210,11 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(arrItem) {
-  let result = [];
-  arrItem.forEach((item,index)=> {
-    if (arrItem.indexOf(item)== index) result.push(item)
-    result result;
+function removeApple(strings) {
+  let newArray = strings.filter(item=>{
+    return item !== 'apple';
   })
+  return newArray;
 }
 
 /**
@@ -220,8 +232,11 @@ function removeApple(arrItem) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(arrItem) {
+  const reducer = arrItem.reduce((accumulator, currentValue)=>{
+    return accumulator+currentValue;
+  })
+  return reducer;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -239,8 +254,12 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  let names = [];
+  runners.forEach(person => {
+    names.push(`${person.last_name}, ${person.first_name}`);
+  });
+  return names;
 }
 
 /**
@@ -255,8 +274,10 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+   return runners.map(person => {
+    return person.first_name.toUpperCase();
+  })
 }
 
 /**
@@ -273,8 +294,11 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let runnerSize = runners.filter(shirt =>{
+  return shirt.shirt_size===tShirtSize;
+  })
+  return runnerSize;
 }
 
 /**
@@ -288,8 +312,11 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  let donations = runners.reduce((acc, curr)=>{
+    return acc+=curr.donation;
+  },0) 
+  return donations;
 }
 
 /////////////// CLOSURES ///////////////
