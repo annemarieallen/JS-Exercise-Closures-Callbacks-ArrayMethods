@@ -156,9 +156,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
+
+function lowerCaseStrings(arrItem) {
   /* code here */
 }
+
 
 /**
  * ### Challenge `isItAnApple`
@@ -195,8 +197,12 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(arrItem) {
+  let result = [];
+  arrItem.forEach((item,index)=> {
+    if (arrItem.indexOf(item)== index) result.push(item)
+    result result;
+  })
 }
 
 /**
